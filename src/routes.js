@@ -6,7 +6,7 @@ import Repository from './pages/repository';
 
 export default function Routes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/repo-show">
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/repository/:repository" component={Repository} />

@@ -14,6 +14,14 @@ export default class Main extends Component {
   };
 
   componentDidMount() {
+    const init = [
+      'facebook/react',
+      'facebook/react-native',
+      'airbnb/javascript',
+    ];
+
+    localStorage.setItem('repositories', JSON.stringify(init));
+
     const repositories = localStorage.getItem('repositories');
 
     if (repositories) {
@@ -63,7 +71,7 @@ export default class Main extends Component {
         <Form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            placeholder="Adicione um repositório"
+            placeholder="Add um usuário/repositório. Ex:facebook/react"
             value={newRepo}
             onChange={this.handleInputChange}
           />
