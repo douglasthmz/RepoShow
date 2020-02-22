@@ -9,7 +9,11 @@ import { Form, SubmitButton, List } from './styles';
 export default class Main extends Component {
   state = {
     newRepo: '',
-    repositories: [],
+    repositories: [
+      { name: 'facebook/react' },
+      { name: 'airbnb/javascript' },
+      { name: 'facebook/react-native' },
+    ],
     loading: false,
   };
 
@@ -18,14 +22,6 @@ export default class Main extends Component {
 
     if (repositories) {
       this.setState({ repositories: JSON.parse(repositories) });
-    } else {
-      const init = [
-        'facebook/react',
-        'facebook/react-native',
-        'airbnb/javascript',
-      ];
-
-      this.setState({ repositories: [...init] });
     }
   }
 
