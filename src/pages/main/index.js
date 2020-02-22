@@ -14,18 +14,18 @@ export default class Main extends Component {
   };
 
   componentDidMount() {
-    const init = [
-      'facebook/react',
-      'facebook/react-native',
-      'airbnb/javascript',
-    ];
-
-    localStorage.setItem('repositories', JSON.stringify(init));
-
     const repositories = localStorage.getItem('repositories');
 
     if (repositories) {
       this.setState({ repositories: JSON.parse(repositories) });
+    } else {
+      const init = [
+        'facebook/react',
+        'facebook/react-native',
+        'airbnb/javascript',
+      ];
+
+      this.setState({ repositories: [...init] });
     }
   }
 
